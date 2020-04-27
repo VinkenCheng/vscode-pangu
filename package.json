@@ -2,11 +2,11 @@
   "name": "pangu",
   "displayName": "pangu",
   "description": "add whitespace",
-  "version": "0.1.6",
-  "publisher": "halfcrazy",
+  "version": "0.1.7",
+  "publisher": "Mankin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/halfcrazy/vscode-pangu"
+    "url": "https://github.com/VinkenCheng/vscode-pangu"
   },
   "engines": {
     "vscode": "^1.41.0"
@@ -22,12 +22,23 @@
     "commands": [{
         "command": "extension.add_space",
         "title": "Pangu: Add whitespace for selection"
-      },
-      {
+      }, {
         "command": "extension.add_space_all",
         "title": "Pangu: Add whitespace for all"
       }
     ],
+    "menus": {
+      "editor/context": [{
+          "when": "editorHasSelection",
+          "command": "extension.add_space",
+          "group": "1_modification"
+        },
+        {
+          "command": "extension.add_space_all",
+          "group": "1_modification"
+        }
+      ]
+    },
     "configuration": {
       "type": "object",
       "title": "Pangu Configuration",
